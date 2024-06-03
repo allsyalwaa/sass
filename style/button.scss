@@ -1,0 +1,23 @@
+@import "variable";
+
+// base style
+@mixin btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+// variant style
+.btn-primary {
+  @include btn;
+  background-color: $primary;
+  color: white;
+  border: 2px solid $primary;
+}
+
+.btn-primary-outline {
+  @include btn;
+  background-color: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+}

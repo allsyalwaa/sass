@@ -1,0 +1,240 @@
+// import files
+@import "variable";
+@import "button";
+
+// import font-family
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// simple reset css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media (width < 425px) {
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 16px;
+  @media (width < 1024px) {
+    font-size: 35px;
+  }
+  @media (width < 756px) {
+    font-size: 24px;
+  }
+}
+p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+
+//section hero
+.sec-hero {
+  position: relative;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+    height: 90vh;
+    min-height: 500px;
+    max-height: 900px;
+    @media (width < 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (width < 768px) {
+      grid-template-columns: 1fr;
+    }
+    .column-text {
+      order: 1;
+      grid-column: 1/3;
+      @media (width < 1024px) {
+        grid-column: 1/2;
+      }
+      @media (width < 768px) {
+        order: 2;
+      }
+    }
+    .column-img {
+      order: 2;
+      @media (width < 768px) {
+        order: 1;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    //   img decor
+    .decor-hero {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      z-index: -1;
+      @media (width < 768px) {
+        width: 80%;
+      }
+    }
+  }
+}
+
+// navbar
+.navbar {
+  padding: 16px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  .container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media (width < 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .menus {
+      ul {
+        display: flex;
+        gap: 16px;
+        color: $primary;
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+      @media (width < 768px) {
+        display: none;
+      }
+    }
+
+    .logo {
+      text-align: center;
+      @media (width < 768px) {
+        text-align: left;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 800;
+        color: $primary;
+        font-size: 1.625rem;
+      }
+    }
+    .action {
+      margin-left: auto;
+      @media (width < 768px) {
+        display: none;
+      }
+    }
+    .trigger-mobile {
+      display: none;
+      @media (width < 768px) {
+        display: block;
+      }
+      border: none;
+      background: none;
+      width: 24px;
+      height: 24px;
+      margin-left: auto;
+    }
+  }
+}
+
+// section about 1
+.sec-about1 {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (width < 768px) {
+      grid-template-columns: 1fr;
+    }
+    .column-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 75%;
+        @media (width < 768px) {
+          width: 100%;
+        }
+      }
+    }
+    .column-text {
+      h3 {
+        font-size: 2.25rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+// section about 2
+.sec-about2 {
+  padding: 48px 0;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (width < 768px) {
+      grid-template-columns: 1fr;
+    }
+    .column-text {
+      order: 1;
+      @media (width < 768px) {
+        order: 2;
+      }
+      h3 {
+        font-size: 2.25rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .sub-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        h5 {
+          font-size: 16px;
+          font-weight: 500;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    .column-img {
+      order: 2;
+      @media (width < 768px) {
+        order: 1;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 75%;
+      }
+    }
+  }
+}
+
+// footer
+footer {
+  background-color: $primary;
+  color: white;
+  text-align: center;
+  padding: 32px 0;
+}
